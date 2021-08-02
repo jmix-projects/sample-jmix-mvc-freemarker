@@ -24,19 +24,6 @@ repositories {
     }
 }
 
-/*dependencyManagement {
-    imports {
-        mavenBom "com.vaadin:vaadin-bom:${vaadinBomVersion}"
-    }
-    *//*dependencies {
-        dependency("com.vaadin:vaadin-spring-boot-starter:${vaadinSpringVersion}")
-        dependency("org.vaadin.spring.extensions:vaadin-spring-ext-boot:${vaadin4SpringVersion}")
-        dependency("org.vaadin.spring.extensions:vaadin-spring-ext-security:${vaadin4SpringVersion}")
-        dependency("org.hibernate:hibernate-validator:4.3.1.Final")
-        dependency("javax.validation:validation-api:1.0.0.GA")
-    }*//*
-}*/
-
 dependencies {
     implementation 'io.jmix.core:jmix-core-starter'
     implementation 'io.jmix.data:jmix-eclipselink-starter'
@@ -48,9 +35,6 @@ dependencies {
     implementation 'io.jmix.security:jmix-security-ui-starter'
     implementation 'io.jmix.security:jmix-security-data-starter'
     implementation 'io.jmix.localfs:jmix-localfs-starter'
-/*    implementation 'com.vaadin:vaadin-spring-boot-starter'
-    implementation 'org.vaadin.spring.extensions:vaadin-spring-ext-boot'
-    implementation 'org.vaadin.spring.extensions:vaadin-spring-ext-security'*/
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-freemarker'
@@ -60,9 +44,6 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
-    implementation "io.jmix.reports:jmix-reports-ui-starter"
-    implementation "io.jmix.reports:jmix-reports-rest-starter"
-    implementation "io.jmix.reports:jmix-reports-starter"
 }
 
 test {
