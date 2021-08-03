@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 public class SecurityConfiguration extends StandardSecurityConfiguration {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/portal/*").authenticated()
+        http.authorizeRequests().antMatchers("/portal/**").authenticated()
                 .and()
                 .formLogin().successForwardUrl("/portal/users");
         super.configure(http);

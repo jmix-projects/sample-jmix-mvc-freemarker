@@ -1,21 +1,23 @@
 package com.company.mvcfreemarker.controller;
 
-import com.company.mvcfreemarker.entity.User;
-import io.jmix.core.UnconstrainedDataManager;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.company.mvcfreemarker.service.UserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/portal/users")
 public class UserController {
-    @Autowired
-    private UnconstrainedDataManager dataManager;
+    private UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
-    public String getUsers(@ModelAttribute("model") ModelMap model) {
-        model.addAttribute("users", dataManager.load(User.class).all().list());
+    public String getUsers(Model model) {
+        model.addAttribute("users", userService.findAll());
         return "users";
     }
 }
