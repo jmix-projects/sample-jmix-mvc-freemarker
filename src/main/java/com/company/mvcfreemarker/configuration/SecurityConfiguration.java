@@ -12,7 +12,7 @@ public class SecurityConfiguration extends StandardSecurityConfiguration {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/portal/**").authenticated()
                 .and()
-                .formLogin().successForwardUrl("/portal/users");
+                .formLogin().defaultSuccessUrl("/portal/users", true);
         super.configure(http);
     }
 }
